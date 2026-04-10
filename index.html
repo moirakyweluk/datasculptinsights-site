@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <title>DataSculpt Insights</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
   <style>
@@ -23,19 +22,42 @@
       min-height: 100vh;
       text-align: center;
       padding: 40px;
+      box-sizing: border-box;
     }
 
     .hero {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       align-items: center;
-      gap: 20px;
-      max-width: 1000px;
+      gap: 40px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+      text-transform: uppercase;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .hero-side.left {
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    .hero-side.right {
+      align-items: flex-start;
+      text-align: left;
     }
 
     .hero-side .big {
-      font-size: 64px;
-      font-weight: 900;
+      font-size: 74px;
+      font-weight: 850;
+      line-height: 0.9;
       margin: 0;
     }
 
@@ -44,25 +66,27 @@
       opacity: 0.75;
     }
 
-    /* CENTER TEXT + BLUE CORNERS */
     .hero-core {
       position: relative;
-      padding: 28px;
+      padding: 32px;
     }
 
     .hero-core p {
       font-size: 18px;
-      max-width: 300px;
+      max-width: 320px;
       margin: 0 auto;
       opacity: 0.9;
+      line-height: 1.5;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
     }
 
     .hero-core::before,
     .hero-core::after {
       content: "";
       position: absolute;
-      width: 50px;
-      height: 50px;
+      width: 56px;
+      height: 56px;
       border: 3px solid #3b82f6;
       opacity: 0.9;
     }
@@ -75,18 +99,20 @@
     }
 
     .hero-core::after {
-      bottom: 0;
       right: 0;
+      bottom: 0;
       border-left: none;
       border-top: none;
     }
 
     .hero-sub {
-      margin-top: 48px;
+      margin-top: 56px;
     }
 
     .hero-sub p {
       margin: 0;
+      font-size: 18px;
+      font-weight: 600;
       opacity: 0.85;
     }
 
@@ -95,50 +121,56 @@
       font-size: 14px;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      opacity: 0.6;
+      opacity: 0.65;
     }
 
     @media (max-width: 768px) {
       .hero {
         grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .hero-side.left,
+      .hero-side.right {
+        align-items: center;
+        text-align: center;
       }
 
       .hero-side .big {
         font-size: 48px;
+      }
+
+      .hero-core p {
+        max-width: 280px;
       }
     }
   </style>
 </head>
 
 <body>
+  <section class="hero-wrap">
+    <div class="hero">
+      <div class="hero-side left">
+        <span class="kicker">WHAT</span>
+        <h1 class="big">DATA</h1>
+        <span class="kicker">SAYS</span>
+      </div>
 
-<section class="hero-wrap">
-  <div class="hero">
+      <div class="hero-core">
+        <p>Turning insights into action across product, growth &amp; operations.</p>
+      </div>
 
-    <div class="hero-side">
-      <span class="kicker">WHAT</span>
-      <h1 class="big">DATA</h1>
-      <span class="kicker">SAYS</span>
+      <div class="hero-side right">
+        <span class="kicker">WHAT</span>
+        <h1 class="big">INSIGHTS</h1>
+        <span class="kicker">DO</span>
+      </div>
     </div>
 
-    <div class="hero-core">
-      <p>Turning insights into action across product, growth & operations.</p>
+    <div class="hero-sub">
+      <p>Mixed-methods research, analytics, and decision-ready outputs.</p>
+      <div class="coming-soon">Coming soon</div>
     </div>
-
-    <div class="hero-side">
-      <span class="kicker">WHAT</span>
-      <h1 class="big">INSIGHTS</h1>
-      <span class="kicker">DO</span>
-    </div>
-
-  </div>
-
-  <div class="hero-sub">
-    <p>Mixed-methods research, analytics, and decision-ready outputs.</p>
-    <div class="coming-soon">Coming soon</div>
-  </div>
-</section>
-
+  </section>
 </body>
 </html>
-
